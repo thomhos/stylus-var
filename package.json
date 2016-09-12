@@ -1,6 +1,6 @@
 {
   "name": "stylus-var",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An easy method to add vars to your stylus file",
   "main": "index.js",
   "scripts": {
