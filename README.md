@@ -22,6 +22,15 @@ stylus.use(styleVars);
 
 Example with webpack. (requires more dependencies)
 ```
+var ArrayWithStyles = [
+  {
+    name: 'someColor',
+    value: '#ffffff'
+  }
+];
+
+var styleVars = require('stylus-var')(ArrayWithStyles);
+
 module.exports = {
     module: {
         loaders: [
@@ -33,7 +42,7 @@ module.exports = {
     },
 
     stylus: {
-      use: [rupture(), myLib()]
+      use: [styleVars()]
     }
 }
 
