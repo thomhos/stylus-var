@@ -11,7 +11,10 @@ module.exports = function(varArr) {
 
   function addStyle(stl, item) {
     stl.include(__dirname);
-    stl.define(item.name, new stylus.nodes.Literal(item.value));
+    if(item !== null && typeof item === 'object') {
+      stl.define(item.name, item.value, true);
+    } else {
+      stl.define(item.name, item.value);
+    };
   };
-
 };

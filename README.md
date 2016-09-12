@@ -6,7 +6,41 @@ A function to add an array of vars from js to stylus. Useful for when you have s
 npm i -D stylus-var
 ```
 
+
 ## Usage
+
+Your objects in the array should be structured like;
+```
+{
+  name: 'ColorPrimary',
+  value: '#ffffff'
+}
+```
+inside stylus
+```
+background-color: ColorPrimary
+```
+
+If the value is an object, you can access it's properties inside stylus by doing this;
+```
+{
+  name: 'FontSize',
+  value: {
+    base: '10px',
+    body: '1.6rem'
+  }
+}
+```
+
+inside stylus
+```
+font-size: FontSize.body
+```
+(keep in mind to use the colon when defining an objects)
+
+
+
+Example
 ```
 var ArrayWithStyles = [
   {
