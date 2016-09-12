@@ -15,9 +15,9 @@ var ArrayWithStyles = [
   }
 ];
 
-var styleVars = require('stylus-var')(ArrayWithStyles);
+var styleVars = require('stylus-var');
 
-stylus.use(styleVars);
+stylus.use(styleVars(ArrayWithStyles));
 ```
 
 Example with webpack. (requires more dependencies)
@@ -29,7 +29,7 @@ var ArrayWithStyles = [
   }
 ];
 
-var styleVars = require('stylus-var')(ArrayWithStyles);
+var styleVars = require('stylus-var');
 
 module.exports = {
     module: {
@@ -42,7 +42,7 @@ module.exports = {
     },
 
     stylus: {
-      use: [styleVars()]
+      use: [styleVars(ArrayWithStyles)]
     }
 }
 
